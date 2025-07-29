@@ -5,7 +5,7 @@
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
         <link href="styles.css" rel="stylesheet">
-        <title>Trivia</title>
+        <title>Math - The real way</title>
         <script>
             // The code which check answers to questions
 
@@ -44,7 +44,7 @@
                 // Check free response submission
                 document.querySelector('#check').addEventListener('click', function() {
                     let input = document.querySelector('input')
-                    if (input.value == '0.0.0.0 to 255.255.255.255') {
+                    if (input.value.toLowerCase() == 'equivalent fractions' || input.value.toLowerCase() == 'equivalent fraction') {
                         input.style.backgroundColor = 'green';
                         input.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
                     }
@@ -67,10 +67,10 @@
                 <h2>Part 1: Multiple Choice </h2>
                 <hr>
                 <!-- Multiple choice question -->
-                <h3>Which company developed the C programming language?</h3>
-                <button class="incorrect">IBM Research</button>
-                <button class="incorrect">Xerox PARC</button>
-                <button class="correct">Bell labs</button>
+                <h3>__ is a improper fraction.</h3>
+                <button class="incorrect">1/2</button>
+                <button class="incorrect">1/9</button>
+                <button class="correct">6/5</button>
                 <p class="feedback"></p>
             </div>
 
@@ -78,11 +78,11 @@
                 <h2>Part 2: Free Response</h2>
                 <hr>
                 <!-- Free response question -->
-                 <h3>What is the max IPv4 address range?</h3>
+                 <h3>What are fractions with the same value called?</h3>
                  <input type="text">
                  <button id="check">Check Answer</button>
                  <p class="feedback"></p>
-                 <p><h3>Put your answer in the format of "x.x.x.x to x.x.x.x"</h3></p>
+                 <p><h3></h3></p>
             </div>
         </div>
     </body>
