@@ -66,14 +66,14 @@ input[type="text"] {
 }
 
 input[type="text"]:hover {
-    background-color: #404040;
+    background-color: #555555;
     transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
 }
 
 h3 {
-    color:
+    color: #aaaaaa;
 }
 
 h2 {
-    color: "green";
+    color: "aaaaaa";
 }
