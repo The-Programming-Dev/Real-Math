@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia</title>
+        <script>
+            // The code which check answers to questions
+
+            // Wait for DOM content to load
+            document.addEventListener('DOMContentLoaded', function() {
+                // Get all elements with class correct
+                let corrects = document.querySelectorAll('.correct');
+
+                // Add event listeners to each correct button
+                for (let i = 0; i < corrects.length; i++) {
+                    corrects[i].addEventListener('click', function() {
+
+                        // Set background color to green
+                        corrects[i].style.backgroundColor = 'Green';
+
+                        // Go to parent element of correct button and find the first element with class "feedback" which has that parent
+                        corrects[i].parentElement.querySelector('.feedback').innerHTML = 'Correct!';
+                    });
+                }
+
+                // Get all elements with class incorrect
+                let incorrects = document.querySelectorAll(".incorrect");
+
+                // Add event listeners for each incorrect button
+                for (let i = 0; i < incorrects.length; i++) {
+                    incorrects[i].addEventListener('click', function() {
+
+                        // Set background color to red
+                        incorrects[i].style.backgroundColor = 'Red';
+
+                        // Go to parent element of correct button and find the first element with class "feedback" which has that parent
+                        incorrects[i].parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
+                    });
+                }
+
+                // Check free response submission
+                document.querySelector('#check').addEventListener('click', function() {
+                    let input = document.querySelector('input')
+                    if (input.value == '0.0.0.0 to 255.255.255.255') {
+                        input.style.backgroundColor = 'green';
+                        input.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
+                    }
+                    else {
+                        input.style.backgroundColor = 'red';
+                        input.parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
+                    }
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Trivia</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- Multiple choice question -->
+                <h3>Which company developed the C programming language?</h3>
+                <button class="incorrect">IBM Research</button>
+                <button class="incorrect">Xerox PARC</button>
+                <button class="correct">Bell labs</button>
+                <p class="feedback"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- Free response question -->
+                 <h3>What is the max IPv4 address range?</h3>
+                 <input type="text">
+                 <button id="check">Check Answer</button>
+                 <p class="feedback"></p>
+                 <p><h3>Put your answer in the format of "x.x.x.x to x.x.x.x"</h3></p>
+            </div>
+        </div>
+    </body>
+
+</html>
